@@ -154,5 +154,15 @@ export const navigation: NavSection[] = [
             },
 
         ]
+    },
+    {
+        title: "Examples",
+        items: [
+            {
+                name: "Initial Step",
+                href: "/styleguide/examples/initial-step",
+                badge: "New"
+            }
+        ]
     }
 ];
