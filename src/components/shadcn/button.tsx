@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 const buttonVariants = cva(
     // Base styles - usando tokens do design system
     [
-        "inline-flex items-center justify-center",
+        "inline-flex items-center justify-center whitespace-nowrap",
         "gap-3",  // 12px gap do Figma
         "cursor-pointer",
         "transition-colors",
@@ -183,7 +183,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HT
                     </span>
                 )}
 
-                {!onlyIcon && (asChild ? children : <span className="truncate">{children}</span>)}
+                {!onlyIcon && children}
 
                 {!loading && endIcon && (
                     <span className={cn("shrink-0 flex items-center justify-center", iconSizeClass)}>
