@@ -24,17 +24,17 @@
     /* ============================================================
      BRAND SCALE (Verde Principal)
      ============================================================ */
-    --color-brand-50: oklch(0.97 0.05 155);
-    --color-brand-100: oklch(0.94 0.08 155);
-    --color-brand-200: oklch(0.89 0.12 155);
-    --color-brand-300: oklch(0.82 0.15 155);
-    --color-brand-400: oklch(0.74 0.17 155);
-    --color-brand-500: oklch(0.67 0.18 155);
-    --color-brand-600: oklch(0.62 0.18 155);
-    --color-brand-700: oklch(0.52 0.15 155);
-    --color-brand-800: oklch(0.42 0.12 155);
-    --color-brand-900: oklch(0.31 0.08 155);
-    --color-brand-950: oklch(0.18 0.04 155);
+    --color-brand-50: oklch(0.9735 0.0213 158.6);
+    --color-brand-100: oklch(0.9407 0.0444 157.53);
+    --color-brand-200: oklch(0.8852 0.0847 159.88);
+    --color-brand-300: oklch(0.816 0.128 158.67);
+    --color-brand-400: oklch(0.7414 0.1569 156.89);
+    --color-brand-500: oklch(0.6824 0.1693 153.95);
+    --color-brand-600: oklch(0.6413 0.165272 152.9579);
+    --color-brand-700: oklch(0.5558 0.140274 153.9654);
+    --color-brand-800: oklch(0.4636 0.1147 154.94);
+    --color-brand-900: oklch(0.3693 0.090196 155.6355);
+    --color-brand-950: oklch(0.2475 0.0578 158.09);
 
     /* ============================================================
      NEUTRAL SCALE (Cinza)
@@ -55,17 +55,17 @@
     /* ============================================================
      SUCCESS SCALE (Verde Feedback)
      ============================================================ */
-    --color-success-50: oklch(0.97 0.05 155);
-    --color-success-100: oklch(0.94 0.08 155);
-    --color-success-200: oklch(0.89 0.12 155);
-    --color-success-300: oklch(0.82 0.15 155);
-    --color-success-400: oklch(0.74 0.17 155);
-    --color-success-500: oklch(0.67 0.18 155);
-    --color-success-600: oklch(0.62 0.18 155);
-    --color-success-700: oklch(0.52 0.15 155);
-    --color-success-800: oklch(0.42 0.12 155);
-    --color-success-900: oklch(0.31 0.08 155);
-    --color-success-950: oklch(0.18 0.04 155);
+    --color-success-50: oklch(0.9735 0.0213 158.6);
+    --color-success-100: oklch(0.9407 0.0444 157.53);
+    --color-success-200: oklch(0.8852 0.0847 159.88);
+    --color-success-300: oklch(0.816 0.128 158.67);
+    --color-success-400: oklch(0.7414 0.1569 156.89);
+    --color-success-500: oklch(0.6824 0.1693 153.95);
+    --color-success-600: oklch(0.6413 0.165272 152.9579);
+    --color-success-700: oklch(0.5558 0.140274 153.9654);
+    --color-success-800: oklch(0.4636 0.1147 154.94);
+    --color-success-900: oklch(0.3693 0.090196 155.6355);
+    --color-success-950: oklch(0.2475 0.0578 158.09);
 
     /* ============================================================
      WARNING SCALE (Laranja)
