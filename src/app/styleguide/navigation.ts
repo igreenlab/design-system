@@ -24,6 +24,11 @@ export const navigation: NavSection[] = [
                 name: "Documentation",
                 href: "/styleguide/documentation",
             },
+            {
+                name: "Installation",
+                href: "/styleguide/installation",
+                badge: "New"
+            },
         ]
     },
     {
