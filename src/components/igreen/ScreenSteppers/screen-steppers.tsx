@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { StepperProgress } from "../StepperProgress";
 import { ScreenSteppersProvider, useScreenSteppers } from "./screen-steppers.context";
 import { screenSteppersStyles as styles } from "./screen-steppers.styles";
@@ -37,7 +36,7 @@ function ScreenSteppersInner({
             <header className={headerClass}>
                 {/* iGreen Logo */}
                 <div className={styles.logo}>
-                    <Image src={igreenLogo} alt="iGreen" width={15} height={21} />
+                    <img src={igreenLogo} alt="iGreen" width={15} height={21} />
                 </div>
 
                 {/* Stepper Progress */}

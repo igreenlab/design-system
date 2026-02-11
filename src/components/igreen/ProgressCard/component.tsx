@@ -61,7 +61,6 @@ const STATUS_CONFIG: Record<ProgressCardStatus, {
 
 import DocPdfIcon from "@/img/doc-pdf.svg";
 import ImageThumbIcon from "@/img/image-thumb.svg";
-import Image from "next/image";
 
 // ... previous code ...
 
@@ -86,11 +85,11 @@ export const ProgressCard: React.FC<ProgressCardProps> = ({
         }
 
         if (type === "pdf") {
-            return <Image src={DocPdfIcon} alt="PDF" className={progressCardStyles.icon.main} />;
+            return <img src={DocPdfIcon} alt="PDF" className={progressCardStyles.icon.main} />;
         }
 
         if (type === "image") {
-            return <Image src={ImageThumbIcon} alt="Image" className={progressCardStyles.icon.main} />;
+            return <img src={ImageThumbIcon} alt="Image" className={progressCardStyles.icon.main} />;
         }
 
         return <Icon name="fill-file" className={progressCardStyles.icon.main} />;
