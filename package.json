@@ -1,7 +1,16 @@
 {
   "name": "igreenlink",
   "version": "0.1.0",
-  "private": true,
+  "description": "iGreen Design System — Componentes, tokens e temas para projetos iGreen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snksergio/igreenlink.git"
+  },
+  "files": [
+    "src/components",
+    "src/lib",
+    "themes"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
