@@ -1,5 +1,5 @@
 import React from "react";
-import { ChoiceGroupProps, ChoiceItemProps } from "./choice.types";
+import type { ChoiceGroupProps, ChoiceItemProps } from "./choice.types";
 import { choiceStyles } from "./choice.styles";
 import { cn } from "@/lib/utils";
 import { Icon } from "@/components/igreen/Icon";

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { IconBoxProps } from "../FileDropZone.types";
+import type { IconBoxProps } from "../FileDropZone.types";
 import { getIconBoxClasses, fileDropZoneStyles } from "../FileDropZone.styles";
 import { cn } from "@/lib/utils";
 

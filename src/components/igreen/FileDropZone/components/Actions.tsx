@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FileDropZoneActionsProps } from "../FileDropZone.types";
+import type { FileDropZoneActionsProps } from "../FileDropZone.types";
 import { fileDropZoneStyles } from "../FileDropZone.styles";
 import { cn } from "@/lib/utils";
 

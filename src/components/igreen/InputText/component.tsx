@@ -1,14 +1,14 @@
 import React, { forwardRef } from "react";
 import { Mail } from "lucide-react";
 
-import { InputTextProps } from "./component.types";
+import type { InputTextProps } from "./component.types";
 import { inputTextStyles } from "./component.styles";
 import { cn } from "@/lib/utils";
 
 // Shadcn Primitives
 import { Field, FieldLabel, FieldDescription } from "@/components/shadcn/field";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/shadcn/input-group";
-import { Icon, IconName } from "@/components/igreen/Icon";
+import { Icon, type IconName } from "@/components/igreen/Icon";
 
 // ===========================================
 // HELPERS

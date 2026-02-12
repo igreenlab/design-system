@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ToggleCardProps } from "./ToggleCard.types";
+import type { ToggleCardProps } from "./ToggleCard.types";
 import { toggleCardStyles } from "./ToggleCard.styles";
 import { cn } from "@/lib/utils";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, DragEvent, useCallback } from "react";
+import { useState, useRef, type DragEvent, useCallback } from "react";
 
 export interface UseFileDropOptions {
     /** Tipos de arquivo aceitos */

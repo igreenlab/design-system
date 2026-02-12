@@ -1,5 +1,5 @@
-import { ComponentProps, ReactNode } from "react";
-import { IconName } from "@/components/igreen/Icon";
+import type { ComponentProps, ReactNode } from "react";
+import type { IconName } from "@/components/igreen/Icon";
 
 export type InputTextStatus = "default" | "error" | "warning" | "completed";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { icons } from "./icons";
-import { IconProps } from "./icon.types";
+import type { IconProps } from "./icon.types";
 import { iconStyles } from "./icon.styles";
 
 export const Icon = React.forwardRef<SVGSVGElement, IconProps>(

@@ -12,7 +12,7 @@ import {
     ArrowRight
 } from "lucide-react";
 import { Icon } from "@/components/igreen/Icon";
-import { FileDropZoneStatus } from "./FileDropZone.types";
+import type { FileDropZoneStatus } from "./FileDropZone.types";
 
 // ===== ÍCONES POR STATUS =====
 export const statusIcons: Record<FileDropZoneStatus, React.ReactNode> = {

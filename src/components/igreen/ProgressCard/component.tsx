@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React from "react";
 import { XCircle } from "lucide-react";
-import { ProgressCardProps, ProgressCardStatus } from "./component.types";
+import type { ProgressCardProps, ProgressCardStatus } from "./component.types";
 import { progressCardStyles, animationStyles } from "./component.styles";
 import { cn } from "@/lib/utils";
-import { Progress } from "@/components/shadcn/progress";
 import { Alert, AlertDescription } from "@/components/shadcn/alert";
 import { Icon } from "@/components/igreen/Icon";
 

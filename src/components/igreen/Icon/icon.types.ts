@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 import { icons } from "./icons";
 
 export type IconName = keyof typeof icons;

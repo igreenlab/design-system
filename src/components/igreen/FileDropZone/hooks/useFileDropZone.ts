@@ -2,10 +2,10 @@
 
 import { useCallback, useMemo, useState } from "react";
 import { useFileDrop } from "./useFileDrop";
-import { usePdfValidation, PdfValidationMessages } from "./usePdfValidation";
-import { FileDropZoneStatus } from "../FileDropZone.types";
+import { usePdfValidation, type PdfValidationMessages } from "./usePdfValidation";
+import type { FileDropZoneStatus } from "../FileDropZone.types";
 import { statusIcons } from "../FileDropZone.config";
-import { DragEvent, ReactNode } from "react";
+import type { DragEvent, ReactNode } from "react";
 
 export interface UseFileDropZoneOptions {
     // Arquivo

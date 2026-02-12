@@ -7,7 +7,7 @@
  * 3. Organize estilos por elemento/area do componente
  */
 
-import { FileDropZoneStatus } from "./FileDropZone.types";
+import type { FileDropZoneStatus } from "./FileDropZone.types";
 
 export const fileDropZoneStyles = {
     // ===== CONTAINER PRINCIPAL =====

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { forwardRef, useImperativeHandle } from "react";
-import { FileDropZoneProps, FileDropZoneRef } from "./FileDropZone.types";
+import { forwardRef, useImperativeHandle } from "react";
+import type { FileDropZoneProps, FileDropZoneRef } from "./FileDropZone.types";
 import {
     getContainerClasses,
     getTitleClasses,
