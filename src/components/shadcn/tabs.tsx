@@ -39,8 +39,8 @@ const TabsTrigger = React.forwardRef<
             "whitespace-nowrap",
             // Typography (from Figma: text-body-md/semibold)
             "text-body-md-semibold",
-            // Transitions
-            "transition-all",
+            // Transitions & Cursor
+            "cursor-pointer transition-all",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
             "disabled:pointer-events-none disabled:opacity-50",
             // Inactive state (from Figma: fg-muted)

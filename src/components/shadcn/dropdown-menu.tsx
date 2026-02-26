@@ -78,7 +78,7 @@ function DropdownMenuItem({
       data-variant={variant}
       data-active={active}
       className={cn(
-        "focus:bg-bg-primary-subtle focus:text-fg-primary text-body-md-semibold text-fg-main relative flex cursor-default items-center gap-2 rounded-[var(--radius-sm)] px-3.5 py-3 outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "focus:bg-bg-primary-subtle focus:text-fg-primary text-body-md-semibold text-fg-main relative flex cursor-pointer items-center gap-2 rounded-[var(--radius-sm)] px-3.5 py-3 outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         "data-[active=true]:bg-bg-primary-subtle data-[active=true]:text-fg-primary",
         className
       )}
@@ -100,7 +100,7 @@ function DropdownMenuCheckboxItem({
     <DropdownMenuPrimitive.CheckboxItem
       data-slot="dropdown-menu-checkbox-item"
       className={cn(
-        "focus:bg-bg-primary-subtle focus:text-fg-primary text-body-md-semibold text-fg-main relative flex cursor-default items-center gap-2 rounded-[var(--radius-sm)] py-3 pr-3.5 pl-8 outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "focus:bg-bg-primary-subtle focus:text-fg-primary text-body-md-semibold text-fg-main relative flex cursor-pointer items-center gap-2 rounded-[var(--radius-sm)] py-3 pr-3.5 pl-8 outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         "data-[state=checked]:bg-bg-primary-subtle data-[state=checked]:text-fg-primary",
         className
       )}
@@ -137,7 +137,7 @@ function DropdownMenuRadioItem({
     <DropdownMenuPrimitive.RadioItem
       data-slot="dropdown-menu-radio-item"
       className={cn(
-        "focus:bg-bg-primary-subtle focus:text-fg-primary text-body-md-semibold text-fg-main relative flex cursor-default items-center gap-2 rounded-[var(--radius-sm)] py-3 pr-3.5 pl-8 outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "focus:bg-bg-primary-subtle focus:text-fg-primary text-body-md-semibold text-fg-main relative flex cursor-pointer items-center gap-2 rounded-[var(--radius-sm)] py-3 pr-3.5 pl-8 outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         "data-[state=checked]:bg-bg-primary-subtle data-[state=checked]:text-fg-primary",
         className
       )}
@@ -221,7 +221,7 @@ function DropdownMenuSubTrigger({
       data-slot="dropdown-menu-sub-trigger"
       data-inset={inset}
       className={cn(
-        "focus:bg-bg-primary-subtle focus:text-fg-primary data-[state=open]:bg-bg-primary-subtle data-[state=open]:text-fg-primary [&_svg:not([class*='text-'])]:text-muted-foreground text-body-md-semibold text-fg-main flex cursor-default items-center gap-2 rounded-[var(--radius-sm)] px-3.5 py-3 outline-hidden select-none data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "focus:bg-bg-primary-subtle focus:text-fg-primary data-[state=open]:bg-bg-primary-subtle data-[state=open]:text-fg-primary [&_svg:not([class*='text-'])]:text-muted-foreground text-body-md-semibold text-fg-main flex cursor-pointer items-center gap-2 rounded-[var(--radius-sm)] px-3.5 py-3 outline-hidden select-none data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
