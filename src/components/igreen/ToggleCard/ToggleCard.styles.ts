@@ -23,7 +23,7 @@ export const toggleCardStyles = {
     // ===== ÍCONE =====
     icon: {
         container: "flex items-center justify-center shrink-0 size-[42px] bg-bg-surface rounded-base border border-border shadows-boxshadow-xs",
-        inner: "size-6 text-fg-strong",
+        inner: "size-6 flex items-center justify-center [&_svg]:size-full text-fg-strong",
     },
 
     // ===== TEXTOS =====

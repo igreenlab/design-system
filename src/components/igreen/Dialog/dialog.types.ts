@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { DialogProps as RadixDialogProps } from "@radix-ui/react-dialog";
-import { IconName } from "@/components/igreen/Icon/icon.types";
+import type { ReactNode } from "react";
+import type { DialogProps as RadixDialogProps } from "@radix-ui/react-dialog";
+import type { IconName } from "@/components/igreen/Icon/icon.types";
 
 /**
  * Props do componente Dialog

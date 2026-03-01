@@ -15,7 +15,7 @@ import {
 import { Button } from "@/components/shadcn/button";
 import { Icon } from "@/components/igreen/Icon";
 
-import { DialogProps } from "./dialog.types";
+import type { DialogProps } from "./dialog.types";
 import { dialogStyles } from "./dialog.styles";
 
 /**
