@@ -8,7 +8,7 @@
 
 export const screenSteppersStyles = {
     /** Outer container - centered with max width */
-    container: "flex flex-col gap-6 md:gap-8 w-full max-w-[480px] mx-auto p-7 md:py-[72px] md:px-8",
+    container: "flex flex-col gap-6 md:gap-8 w-full max-w-[480px] mx-auto py-7 md:py-[72px] px-8 md:p-x0",
 
     /** Header section with logo and stepper */
     header: {
