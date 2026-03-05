@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
+import type React from "react";
 import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
 
 export interface TextCollapseProps extends React.ComponentPropsWithoutRef<typeof CollapsiblePrimitive.Root> {

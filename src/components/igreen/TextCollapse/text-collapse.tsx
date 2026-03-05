@@ -1,10 +1,9 @@
 "use client";
 
-import * as React from "react";
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/shadcn/collapsible";
 import { cn } from "@/lib/utils";
 import { Plus, Minus } from "lucide-react";
-import { TextCollapseProps } from "./text-collapse.types";
+import type { TextCollapseProps } from "./text-collapse.types";
 import { textCollapseStyles } from "./text-collapse.styles";
 
 export function TextCollapse({
