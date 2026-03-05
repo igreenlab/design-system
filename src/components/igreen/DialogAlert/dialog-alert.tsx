@@ -1,13 +1,12 @@
 "use client";
 
-import * as React from "react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogClose } from "@/components/shadcn/dialog";
 import { Button } from "@/components/shadcn/button";
 import { cn } from "@/lib/utils";
-import { DialogAlertProps } from "./dialog-alert.types";
+import type { DialogAlertProps } from "./dialog-alert.types";
 import { dialogAlertStyles } from "./dialog-alert.styles";
 import { Icon } from "@/components/igreen/Icon";
-import { IconName } from "@/components/igreen/Icon/icon.types";
+import type { IconName } from "@/components/igreen/Icon/icon.types";
 
 const variantIcons: Record<string, IconName> = {
     default: "fill-success",
