@@ -7,7 +7,38 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   RESPONSIVE VARIANTS — *AndDown (max-width) e *AndUp (min-width)
+   ============================================================ */
+@custom-variant xxxsAndDown (@media (max-width: 375px));
+@custom-variant xxsAndDown (@media (max-width: 430px));
+@custom-variant xsAndDown (@media (max-width: 639px));
+@custom-variant smAndDown (@media (max-width: 767px));
+@custom-variant mdAndDown (@media (max-width: 1023px));
+@custom-variant lgAndDown (@media (max-width: 1279px));
+@custom-variant xlAndDown (@media (max-width: 1535px));
+
+@custom-variant xxxsAndUp (@media (min-width: 281px));
+@custom-variant xxsAndUp (@media (min-width: 376px));
+@custom-variant xsAndUp (@media (min-width: 431px));
+@custom-variant smAndUp (@media (min-width: 640px));
+@custom-variant mdAndUp (@media (min-width: 768px));
+@custom-variant lgAndUp (@media (min-width: 1024px));
+@custom-variant xlAndUp (@media (min-width: 1280px));
+
 @theme {
+  /* ============================================================
+     BREAKPOINTS
+     ============================================================ */
+  --breakpoint-xxxs: 281px;
+  --breakpoint-xxs: 376px;
+  --breakpoint-xs: 431px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
   /* ============================================================
      PRIMITIVE COLORS - OKLCH Format
      ============================================================ */

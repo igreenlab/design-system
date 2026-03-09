@@ -90,6 +90,9 @@ export function DefaultActions({
                     status={inputStatus}
                     size="md"
                     className={fileDropZoneStyles.actions.passwordInput}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") onPasswordSubmit?.()
+                    }}
                 />
                 <Button
                     variant="default"
