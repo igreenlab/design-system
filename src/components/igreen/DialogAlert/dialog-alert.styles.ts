@@ -22,7 +22,7 @@ export const dialogAlertStyles = {
 
     // Action buttons container
     actions: {
-        base: "flex items-center gap-3 w-full",
+        base: "flex items-center gap-3 md:w-full",
     },
 
     // Internal layout wrappers
