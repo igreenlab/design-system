@@ -48,7 +48,7 @@ export const dialogStyles = {
 
     // ===== FOOTER =====
     footer: {
-        base: "grid grid-cols-2 gap-3 w-full sm:justify-between sm:space-x-0",
+        base: "!grid grid-cols-2 gap-3 w-full",
     },
 
     // ===== CONTENT WRAPPER =====
