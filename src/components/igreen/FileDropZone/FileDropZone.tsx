@@ -38,6 +38,8 @@ const FileDropZoneRoot = forwardRef<FileDropZoneRef, FileDropZoneProps>(({
     onCameraClick,
     onRetry,
     retryLabel,
+    // Restauração
+    restoredFile,
     // Customização
     children,
     className,
@@ -55,6 +57,7 @@ const FileDropZoneRoot = forwardRef<FileDropZoneRef, FileDropZoneProps>(({
         externalTitle: title,
         externalDescription: description,
         onRetry,
+        restoredFile,
     });
 
     // Expor ref com controle imperativo

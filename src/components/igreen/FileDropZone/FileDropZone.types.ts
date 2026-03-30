@@ -54,6 +54,10 @@ export interface FileDropZoneProps extends Omit<HTMLAttributes<HTMLDivElement>, 
     /** Label do botão retry */
     retryLabel?: string;
 
+    // ===== RESTAURAÇÃO =====
+    /** Arquivo restaurado de sessao anterior. Mostra estado "success" com nome do arquivo e botao "Trocar arquivo". */
+    restoredFile?: { name: string };
+
     // ===== CUSTOMIZAÇÃO =====
     /** Conteúdo customizado (sobrescreve ações default) */
     children?: ReactNode;

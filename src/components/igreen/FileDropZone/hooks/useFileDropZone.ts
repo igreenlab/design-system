@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { useFileDrop } from "./useFileDrop";
 import { usePdfValidation, type PdfValidationMessages } from "./usePdfValidation";
 import type { FileDropZoneStatus } from "../FileDropZone.types";
@@ -25,6 +25,9 @@ export interface UseFileDropZoneOptions {
 
     // Ações
     onRetry?: () => void;
+
+    // Restauração
+    restoredFile?: { name: string };
 
     // Callbacks de drag
     onDragEnter?: (e: DragEvent<HTMLDivElement>) => void;
@@ -90,6 +93,7 @@ export function useFileDropZone(options: UseFileDropZoneOptions): UseFileDropZon
         externalTitle,
         externalDescription,
         onRetry,
+        restoredFile,
         onDragEnter,
         onDragLeave,
     } = options;
@@ -101,6 +105,16 @@ export function useFileDropZone(options: UseFileDropZoneOptions): UseFileDropZon
         description: string | null;
     }>({ status: null, title: null, description: null });
 
+    // Restauração: dismissed quando usuario interage (clear ou novo arquivo)
+    const [restoredDismissed, setRestoredDismissed] = useState(false);
+
+    // Reset dismissed quando restoredFile muda (nova restauração ou removida)
+    const prevRestoredName = useRef(restoredFile?.name);
+    if (restoredFile?.name !== prevRestoredName.current) {
+        prevRestoredName.current = restoredFile?.name;
+        setRestoredDismissed(false);
+    }
+
     // Hook de validação PDF
     const pdfValidation = usePdfValidation({
         onValidated,
@@ -111,6 +125,7 @@ export function useFileDropZone(options: UseFileDropZoneOptions): UseFileDropZon
     const handleFile = useCallback((file: File) => {
         // Limpa estado imperativo quando novo arquivo é selecionado
         setImperativeState({ status: null, title: null, description: null });
+        setRestoredDismissed(true);
 
         const isPdf = file.type.includes("pdf") || file.name.toLowerCase().endsWith(".pdf");
 
@@ -132,26 +147,27 @@ export function useFileDropZone(options: UseFileDropZoneOptions): UseFileDropZon
     // ===== COMPUTED STATUS =====
     const isValidating = pdfValidation.status !== "idle";
 
-    const status = useMemo((): FileDropZoneStatus => {
-        // Estado imperativo tem prioridade
-        if (imperativeState.status) return imperativeState.status;
+    const isRestored = !!restoredFile && !restoredDismissed && !fileDrop.file;
 
+    const status = useMemo((): FileDropZoneStatus => {
+        if (imperativeState.status) return imperativeState.status;
         if (fileDrop.isDragging) return "dragging";
         if (isValidating) {
             if (pdfValidation.status === "loading") return "loading";
             if (pdfValidation.status === "error") return "error";
             if (pdfValidation.status === "password") return "warning";
         }
+        if (isRestored) return "success";
         return externalStatus;
-    }, [imperativeState.status, fileDrop.isDragging, isValidating, pdfValidation.status, externalStatus]);
+    }, [imperativeState.status, fileDrop.isDragging, isValidating, pdfValidation.status, externalStatus, isRestored]);
 
     const visualStatus = pdfValidation.passwordError ? "error" : status;
 
     // ===== COMPUTED CONTENT =====
-    const title = imperativeState.title ?? pdfValidation.title ?? externalTitle;
-    const description = imperativeState.description ?? pdfValidation.description ?? externalDescription;
+    const title = imperativeState.title ?? pdfValidation.title ?? (isRestored ? restoredFile!.name : null) ?? externalTitle;
+    const description = imperativeState.description ?? pdfValidation.description ?? (isRestored ? 'Arquivo anexado anteriormente' : null) ?? externalDescription;
     const icon = status === "idle" && customIcon ? customIcon : statusIcons[visualStatus];
-    const showActions = status !== "loading" && status !== "dragging" && status !== "success";
+    const showActions = status !== "loading" && status !== "dragging";
 
     // ===== COMPUTED ACTIONS MODE =====
     const actionsMode = useMemo(() => {
@@ -167,6 +183,7 @@ export function useFileDropZone(options: UseFileDropZoneOptions): UseFileDropZon
         fileDrop.clearFile();
         pdfValidation.reset();
         setImperativeState({ status: null, title: null, description: null });
+        setRestoredDismissed(true);
     }, [fileDrop, pdfValidation]);
 
     const retry = useCallback(() => {

@@ -9,7 +9,8 @@ import {
     File,
     Camera,
     RefreshCw,
-    ArrowRight
+    ArrowRight,
+    Replace,
 } from "lucide-react";
 import { Icon } from "@/components/igreen/Icon";
 import type { FileDropZoneStatus } from "./FileDropZone.types";
@@ -30,6 +31,7 @@ export const buttonIcons = {
     camera: <Camera className="size-[18px]" />,
     retry: <RefreshCw className="size-[18px]" />,
     submit: <ArrowRight className="size-[18px]" />,
+    replace: <Replace className="size-[18px]" />,
 };
 
 // ===== TEXTOS DE VALIDAÇÃO PDF =====
@@ -56,6 +58,7 @@ export const buttonLabels = {
     selectFile: "Selecionar Arquivo",
     useCamera: "Usar Câmera",
     retry: "Tentar novamente",
+    replaceFile: "Trocar arquivo",
 };
 
 // ===== PLACEHOLDERS =====

@@ -24,11 +24,14 @@ export interface DefaultActionsProps {
     onRetry?: () => void;
     /** Callback para submeter senha */
     onPasswordSubmit?: () => void;
+    /** Callback para trocar arquivo (clear + reopen) */
+    onReplaceFile?: () => void;
     /** Labels customizados */
     labels?: {
         selectFile?: string;
         useCamera?: string;
         retry?: string;
+        replaceFile?: string;
         passwordPlaceholder?: string;
     };
 }
@@ -47,6 +50,7 @@ export function DefaultActions({
     onCameraClick,
     onRetry,
     onPasswordSubmit,
+    onReplaceFile,
     labels = {},
 }: DefaultActionsProps) {
     // Merge labels com defaults
@@ -54,8 +58,28 @@ export function DefaultActions({
         selectFile: labels.selectFile ?? buttonLabels.selectFile,
         useCamera: labels.useCamera ?? buttonLabels.useCamera,
         retry: labels.retry ?? buttonLabels.retry,
+        replaceFile: labels.replaceFile ?? buttonLabels.replaceFile,
         passwordPlaceholder: labels.passwordPlaceholder ?? placeholders.password,
     };
+
+    // Modo success: botão de trocar arquivo
+    if (mode === "success") {
+        return (
+            <Actions>
+                <div className={fileDropZoneStyles.actions.defaultButtonWrapper}>
+                    <Button
+                        variant="soft"
+                        color="secondary"
+                        size="md"
+                        onClick={onReplaceFile ?? onSelectFile}
+                    >
+                        {buttonIcons.replace}
+                        {l.replaceFile}
+                    </Button>
+                </div>
+            </Actions>
+        );
+    }
 
     // Modo erro: botão de retry
     if (mode === "error") {

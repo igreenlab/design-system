@@ -62,6 +62,7 @@ interface ActionButtonsProps {
     onConfirm?: boolean | (() => void);
     confirmText?: string;
     loading?: boolean;
+    confirmDisabled?: boolean;
 }
 
 const DialogActionButtons: React.FC<ActionButtonsProps> = ({
@@ -69,7 +70,8 @@ const DialogActionButtons: React.FC<ActionButtonsProps> = ({
     cancelText = "Cancelar",
     onConfirm,
     confirmText = "Confirmar",
-    loading
+    loading,
+    confirmDisabled,
 }) => {
     return (
         <>
@@ -104,7 +106,7 @@ const DialogActionButtons: React.FC<ActionButtonsProps> = ({
                 <Button
                     variant="default"
                     className={dialogStyles.actionButton}
-                    disabled={loading}
+                    disabled={loading || confirmDisabled}
                     onClick={typeof onConfirm === 'function' ? onConfirm : undefined}
                 >
                     {loading ? "Carregando..." : confirmText}
@@ -129,6 +131,8 @@ export const DialogComponent: React.FC<DialogProps> = ({
     onConfirm,
     confirmText = "Confirmar",
     loading = false,
+    confirmDisabled = false,
+    footer,
     className,
     width,
     fullHeight = false,
@@ -179,14 +183,24 @@ export const DialogComponent: React.FC<DialogProps> = ({
                     {children}
                 </div>
 
-                {(onCancel || onConfirm) && (
-                    <DialogFooter className={dialogStyles.footer.base}>
+                {footer && (
+                    <div className="shrink-0 w-full">
+                        {footer}
+                    </div>
+                )}
+
+                {!footer && (onCancel || onConfirm) && (
+                    <DialogFooter className={cn(
+                        dialogStyles.footer.base,
+                        !onCancel && onConfirm && "grid-cols-1"
+                    )}>
                         <DialogActionButtons
                             onCancel={onCancel}
                             cancelText={cancelText}
                             onConfirm={onConfirm}
                             confirmText={confirmText}
                             loading={loading}
+                            confirmDisabled={confirmDisabled}
                         />
                     </DialogFooter>
                 )}

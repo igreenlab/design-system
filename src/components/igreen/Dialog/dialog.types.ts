@@ -61,6 +61,17 @@ export interface DialogProps extends RadixDialogProps {
   loading?: boolean;
 
   /**
+   * Desabilita o botão de confirmação (sem alterar texto)
+   */
+  confirmDisabled?: boolean;
+
+  /**
+   * Conteúdo customizado para o footer (renderizado fora da área scrollável)
+   * Quando fornecido, substitui o footer padrão (onCancel/onConfirm)
+   */
+  footer?: ReactNode;
+
+  /**
    * Conteúdo do diálogo
    */
   children?: ReactNode;
