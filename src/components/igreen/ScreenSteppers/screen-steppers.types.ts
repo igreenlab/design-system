@@ -17,6 +17,12 @@ export interface ScreenSteppersProps {
     className?: string;
     /** Force a specific layout regardless of viewport. Useful for demos. */
     forceLayout?: "mobile" | "desktop";
+    /**
+     * Optional mapping from logical step IDs to display values.
+     * Useful when some steps are conditionally hidden but logical IDs
+     * must remain stable for routing.
+     */
+    mapDisplayStep?: (currentStep: number, totalSteps: number) => { current: number; total: number };
 }
 
 export interface ScreenSteppersContextValue {

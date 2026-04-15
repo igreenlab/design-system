@@ -14,10 +14,12 @@ function ScreenSteppersInner({
     children,
     className,
     forceLayout,
+    mapDisplayStep,
 }: {
     children: React.ReactNode;
     className?: string;
     forceLayout?: "mobile" | "desktop";
+    mapDisplayStep?: (currentStep: number, totalSteps: number) => { current: number; total: number };
 }) {
     const { currentStep, totalSteps } = useScreenSteppers();
 
@@ -29,6 +31,10 @@ function ScreenSteppersInner({
     const stepperWrapperClass = forceLayout
         ? styles.stepperWrapper[forceLayout]
         : styles.stepperWrapper.base;
+
+    const display = mapDisplayStep
+        ? mapDisplayStep(currentStep, totalSteps)
+        : { current: currentStep, total: totalSteps };
 
     return (
         <div className={cn(styles.container, className)}>
@@ -42,8 +48,8 @@ function ScreenSteppersInner({
                 {/* Stepper Progress */}
                 <div className={stepperWrapperClass}>
                     <StepperProgress
-                        totalSteps={totalSteps}
-                        currentStep={currentStep}
+                        totalSteps={display.total}
+                        currentStep={display.current}
                     />
                 </div>
             </header>
@@ -78,10 +84,11 @@ export function ScreenSteppers({
     children,
     className,
     forceLayout,
+    mapDisplayStep,
 }: ScreenSteppersProps) {
     return (
         <ScreenSteppersProvider totalSteps={totalSteps} initialStep={initialStep}>
-            <ScreenSteppersInner className={className} forceLayout={forceLayout}>
+            <ScreenSteppersInner className={className} forceLayout={forceLayout} mapDisplayStep={mapDisplayStep}>
                 {children}
             </ScreenSteppersInner>
         </ScreenSteppersProvider>
