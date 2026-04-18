@@ -24,6 +24,8 @@ export interface FileDropZoneProps extends Omit<HTMLAttributes<HTMLDivElement>, 
     // ===== ARQUIVO =====
     /** Tipos de arquivo aceitos (ex: ".pdf,.jpg" ou "image/*") */
     accept?: string;
+    /** Limite de tamanho em bytes (default: 8MB) */
+    maxFileSize?: number;
     /** Callback quando arquivo é selecionado (drop ou input) */
     onFile?: (file: File) => void;
 

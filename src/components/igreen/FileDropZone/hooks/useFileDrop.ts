@@ -2,11 +2,17 @@
 
 import { useState, useRef, type DragEvent, useCallback } from "react";
 
+const MAX_FILE_SIZE = 8 * 1024 * 1024; // 8MB
+
 export interface UseFileDropOptions {
     /** Tipos de arquivo aceitos */
     accept?: string;
+    /** Limite de tamanho em bytes (default: 8MB) */
+    maxFileSize?: number;
     /** Callback quando arquivo é selecionado (drop ou input) */
     onFile?: (file: File) => void;
+    /** Callback quando arquivo é rejeitado por tamanho */
+    onFileTooLarge?: (file: File, maxSize: number) => void;
     /** Callback de drag enter */
     onDragEnter?: (e: DragEvent<HTMLDivElement>) => void;
     /** Callback de drag leave */
@@ -45,7 +51,7 @@ export interface UseFileDropReturn {
  * Hook para gerenciar drag-and-drop de arquivos
  */
 export function useFileDrop(options: UseFileDropOptions = {}): UseFileDropReturn {
-    const { accept, onFile, onDragEnter, onDragLeave } = options;
+    const { accept, maxFileSize = MAX_FILE_SIZE, onFile, onFileTooLarge, onDragEnter, onDragLeave } = options;
 
     const inputRef = useRef<HTMLInputElement>(null);
     const dragCounter = useRef(0);
@@ -54,9 +60,13 @@ export function useFileDrop(options: UseFileDropOptions = {}): UseFileDropReturn
     const [file, setFile] = useState<File | null>(null);
 
     const handleFile = useCallback((newFile: File) => {
+        if (newFile.size > maxFileSize) {
+            onFileTooLarge?.(newFile, maxFileSize);
+            return;
+        }
         setFile(newFile);
         onFile?.(newFile);
-    }, [onFile]);
+    }, [onFile, maxFileSize, onFileTooLarge]);
 
     const handleDragOver = useCallback((e: DragEvent<HTMLDivElement>) => {
         e.preventDefault();

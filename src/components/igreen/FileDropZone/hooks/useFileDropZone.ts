@@ -10,6 +10,7 @@ import type { DragEvent, ReactNode } from "react";
 export interface UseFileDropZoneOptions {
     // Arquivo
     accept?: string;
+    maxFileSize?: number;
     onFile?: (file: File) => void;
 
     // PDF
@@ -84,6 +85,7 @@ export interface UseFileDropZoneReturn {
 export function useFileDropZone(options: UseFileDropZoneOptions): UseFileDropZoneReturn {
     const {
         accept,
+        maxFileSize,
         onFile,
         validatePdf = false,
         onValidated,
@@ -136,10 +138,23 @@ export function useFileDropZone(options: UseFileDropZoneOptions): UseFileDropZon
         }
     }, [validatePdf, pdfValidation, onFile]);
 
+    // Handler de arquivo muito grande
+    const handleFileTooLarge = useCallback((file: File, maxSize: number) => {
+        const maxMb = Math.round(maxSize / (1024 * 1024));
+        const fileMb = (file.size / (1024 * 1024)).toFixed(1);
+        setImperativeState({
+            status: "error",
+            title: `Arquivo muito grande (${fileMb}MB)`,
+            description: `O tamanho maximo permitido e ${maxMb}MB. Reduza o arquivo e tente novamente.`,
+        });
+    }, []);
+
     // Hook de drag-and-drop
     const fileDrop = useFileDrop({
         accept,
+        maxFileSize,
         onFile: handleFile,
+        onFileTooLarge: handleFileTooLarge,
         onDragEnter,
         onDragLeave,
     });
