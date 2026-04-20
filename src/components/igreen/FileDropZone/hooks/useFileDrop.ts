@@ -2,7 +2,7 @@
 
 import { useState, useRef, type DragEvent, useCallback } from "react";
 
-const MAX_FILE_SIZE = 8 * 1024 * 1024; // 8MB
+const MAX_FILE_SIZE = 20 * 1024 * 1024; // 20MB
 
 export interface UseFileDropOptions {
     /** Tipos de arquivo aceitos */
