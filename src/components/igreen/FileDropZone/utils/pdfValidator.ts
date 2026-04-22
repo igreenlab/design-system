@@ -125,10 +125,11 @@ export async function validatePdf(
             };
         }
 
-        // Outro erro
+        // Outro erro (PDF assinado digitalmente, estrutura incomum, etc.)
+        // Aceitar como valido — o backend/extractor processa via PyMuPDF
+        console.warn("[pdfValidator] pdfjs falhou ao abrir PDF, aceitando como valido:", pdfError);
         return {
-            isPasswordProtected: false,
-            error: "Erro ao ler o PDF. Verifique se o arquivo e valido."
+            isPasswordProtected: false
         };
     }
 }
