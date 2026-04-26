@@ -45,17 +45,17 @@
 @media (max-width: 768px) {
     :root {
         /* Reduce form heights for mobile */
-        --height-form-xxs: 22px;
-        --height-form-xs: 30px;
-        --height-form-sm: 34px;
-        --height-form-md: 38px;
-        --height-form-lg: 44px;
-        --height-form-xl: 52px;
+        --height-form-xxs: 24px;
+        --height-form-xs: 32px;
+        --height-form-sm: 38px;
+        --height-form-md: 44px;
+        --height-form-lg: 48px;
+        --height-form-xl: 56px;
         /* Reduce border radius for mobile */
-        --radius-sm: 6px;
-        --radius-base: 8px;
-        --radius-lg: 10px;
-        --radius-xl: 14px;
+        --radius-sm: 8px;
+        --radius-base: 12px;
+        --radius-lg: 14px;
+        --radius-xl: 24px;
         /* Reduce ring size */
         --ring-base: 2px;
     }

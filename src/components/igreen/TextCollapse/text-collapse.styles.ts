@@ -1,6 +1,6 @@
 export const textCollapseStyles = {
     // Main container
-    root: "w-full bg-bg-surface rounded-base p-3.5 shadows-boxshadow-xs flex flex-col data-[state=open]:gap-3 transition-all duration-300 ease-in-out",
+    root: "w-full bg-bg-surface rounded-base p-3 md:p-3.5 shadows-boxshadow-xs flex flex-col data-[state=open]:gap-3 transition-all duration-300 ease-in-out",
 
     // Trigger button
     trigger: {

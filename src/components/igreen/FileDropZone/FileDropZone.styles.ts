@@ -27,7 +27,7 @@ export const fileDropZoneStyles = {
 
     // ===== ICON BOX =====
     iconBox: {
-        base: "shrink-0 size-[42px] rounded-[var(--radius-sm)] flex items-center justify-center overflow-hidden",
+        base: "shrink-0 size-9 md:size-[42px] rounded-[var(--radius-sm)] flex items-center justify-center overflow-hidden",
 
         status: {
             idle: "bg-bg-primary text-fg-on-primary",

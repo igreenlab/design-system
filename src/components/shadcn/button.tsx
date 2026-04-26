@@ -30,9 +30,10 @@ const buttonVariants = cva(
             },
             size: {
                 // Usando CSS custom properties para altura + classes de typography
-                md: "h-[var(--height-form-md)] px-4 text-button-sm",  // 46px + 16px padding + classe CSS
-                lg: "h-[var(--height-form-lg)] px-5 text-button-md",  // 52px + 20px padding + classe CSS  
-                xl: "h-[var(--height-form-xl)] px-6 text-button-md",  // 60px + 24px padding + classe CSS
+                // Padding horizontal reduz no mobile para acompanhar a redução de altura
+                md: "h-[var(--height-form-md)] px-3 md:px-4 text-button-sm",  // mobile: 12px / desktop: 16px
+                lg: "h-[var(--height-form-lg)] px-4 md:px-5 text-button-md",  // mobile: 16px / desktop: 20px
+                xl: "h-[var(--height-form-xl)] px-5 md:px-6 text-button-md",  // mobile: 20px / desktop: 24px
             },
             onlyIcon: {
                 true: "",
