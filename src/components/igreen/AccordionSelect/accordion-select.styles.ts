@@ -7,9 +7,9 @@ export const accordionSelectStyles = {
 
     // Item container (row)
     item: {
-        base: "group relative flex items-center justify-between w-full p-4 pl-[18px] pr-6 border-b border-border-muted last:border-b-0 cursor-pointer transition-colors hover:bg-bg-subtle/50 active:bg-bg-subtle",
+        base: "group relative flex items-center justify-between w-full p-3 md:p-4 pl-3.5 md:pl-[18px] pr-4 md:pr-6 border-b border-border-muted last:border-b-0 cursor-pointer transition-colors hover:bg-bg-subtle/50 active:bg-bg-subtle",
         // Specific style for selected item view
-        selectedView: "border-none p-4 pl-[18px] pr-6 cursor-default hover:bg-transparent",
+        selectedView: "border-none p-3 md:p-4 pl-3.5 md:pl-[18px] pr-4 md:pr-6 cursor-default hover:bg-transparent",
     },
 
     // Animation Containers
@@ -28,7 +28,7 @@ export const accordionSelectStyles = {
 
     // Icon Wrapper
     iconWrapper: {
-        base: "flex items-center justify-center size-[42px] rounded-[var(--radius-sm)] bg-bg-primary-subtle shrink-0 text-fg-primary",
+        base: "flex items-center justify-center size-9 md:size-[42px] rounded-[var(--radius-sm)] bg-bg-primary-subtle shrink-0 text-fg-primary",
     },
 
     // Text Content

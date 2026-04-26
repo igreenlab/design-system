@@ -3,7 +3,7 @@
  */
 export const progressCardStyles = {
     container: {
-        base: "flex flex-col p-[18px] bg-bg-surface border border-border rounded-base shadows-boxshadow-sm transition-all duration-200",
+        base: "flex flex-col p-4 md:p-[18px] bg-bg-surface border border-border rounded-base shadows-boxshadow-sm transition-all duration-200",
         variants: {
             default: "",
         }
@@ -13,7 +13,7 @@ export const progressCardStyles = {
         leftContent: "flex items-center gap-3 min-w-0 flex-1",
     },
     icon: {
-        wrapper: "shrink-0 flex items-center justify-center size-10 rounded-sm transition-colors border border-border",
+        wrapper: "shrink-0 flex items-center justify-center size-9 md:size-10 rounded-sm transition-colors border border-border",
         clickable: "cursor-pointer hover:opacity-80 hover:bg-bg-muted",
         main: "size-5",
         variants: {

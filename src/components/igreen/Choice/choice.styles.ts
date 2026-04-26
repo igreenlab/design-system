@@ -9,7 +9,7 @@ export const choiceStyles = {
             inactive: "bg-transparent hover:bg-bg-surface hover:shadows-boxshadow-base",
         },
         iconWrapper: {
-            base: "shrink-0 size-[42px] flex items-center justify-center rounded-sm transition-all duration-300 ease-in-out group-active:scale-95",
+            base: "shrink-0 size-9 md:size-[42px] flex items-center justify-center rounded-sm transition-all duration-300 ease-in-out group-active:scale-95",
             active: "bg-bg-primary-subtle text-fg-primary",
             inactive: "bg-bg-surface text-fg-strong group-hover:bg-bg-muted",
             inner: "size-6 flex items-center justify-center [&_svg]:size-full transition-transform duration-300",
