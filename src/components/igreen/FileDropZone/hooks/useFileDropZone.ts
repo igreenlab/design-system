@@ -129,6 +129,23 @@ export function useFileDropZone(options: UseFileDropZoneOptions): UseFileDropZon
         setImperativeState({ status: null, title: null, description: null });
         setRestoredDismissed(true);
 
+        // Validar tipo do arquivo — rejeitar tipos não reconhecidos (ex: 'application/octet-stream')
+        const ALLOWED_TYPES = [
+            'image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif',
+            'image/tiff', 'image/gif', 'image/bmp', 'application/pdf',
+        ];
+        const hasValidType = ALLOWED_TYPES.includes(file.type.toLowerCase());
+        const hasValidExt = /\.(jpg|jpeg|png|webp|heic|heif|tiff|tif|gif|bmp|pdf)$/i.test(file.name);
+
+        if (!hasValidType && !hasValidExt) {
+            setImperativeState({
+                status: "error",
+                title: "Formato não suportado",
+                description: "Envie uma imagem (JPG, PNG) ou PDF. O arquivo selecionado não foi reconhecido.",
+            });
+            return;
+        }
+
         const isPdf = file.type.includes("pdf") || file.name.toLowerCase().endsWith(".pdf");
 
         if (validatePdf && isPdf) {
