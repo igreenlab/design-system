@@ -13,13 +13,17 @@ export interface ScreenStepActionsConfig {
     /** Layout pattern */
     layout?: "dual" | "single-back";
     /** Back button callback */
-    onBack?: () => void;
+    onBack?: () => void | Promise<unknown>;
     /** Back button label */
     backLabel?: string;
     /** Back button disabled state */
     backDisabled?: boolean;
-    /** Next/proceed button callback */
-    onNext?: () => void;
+    /**
+     * Next/proceed button callback. Pode ser assíncrono: quando retorna uma
+     * Promise, o botão é bloqueado e exibe loading até a Promise resolver,
+     * evitando duplo-clique que dispara a mesma request mais de uma vez.
+     */
+    onNext?: () => void | Promise<unknown>;
     /** Next button label */
     nextLabel?: string;
     /** Next button disabled state */
