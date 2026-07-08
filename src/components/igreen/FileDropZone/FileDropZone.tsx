@@ -26,6 +26,7 @@ const FileDropZoneRoot = forwardRef<FileDropZoneRef, FileDropZoneProps>(({
     description,
     // Arquivo
     accept,
+    maxFileSize,
     onFile,
     // PDF
     validatePdf = false,
@@ -49,6 +50,7 @@ const FileDropZoneRoot = forwardRef<FileDropZoneRef, FileDropZoneProps>(({
     // Hook combinado com toda a lógica
     const dropZone = useFileDropZone({
         accept,
+        maxFileSize,
         onFile,
         validatePdf,
         onValidated,
