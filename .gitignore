@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# build artifacts / logs locais (podem conter caminho de máquina de dev)
+build_log.txt

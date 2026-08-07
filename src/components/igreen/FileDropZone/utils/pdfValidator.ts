@@ -41,6 +41,12 @@ export async function loadPdfJs(): Promise<void> {
     return new Promise((resolve, reject) => {
         const script = document.createElement("script");
         script.src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+        // SRI (hash publicado pelo próprio cdnjs para esta versão exata) —
+        // sem isso, qualquer app que use FileDropZone executa, na origem
+        // do consumidor, o que quer que o CDN sirva nesse momento; com
+        // integrity, o browser recusa o script se o conteúdo não bater.
+        script.integrity = "sha512-q+4liFwdPC/bNdhUpZx6aXDx/h77yEQtn4I1slHydcbZK34nLaR3cAeYSJshoxIOq3mjEf7xJE8YWIUHMn+oCQ==";
+        script.crossOrigin = "anonymous";
         script.async = true;
         script.onload = () => resolve();
         script.onerror = () => reject(new Error("Falha ao carregar pdf.js"));
