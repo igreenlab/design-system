@@ -299,8 +299,8 @@
     }
 
     .text-page-subtitle {
-        font-size: 13px;
-        line-height: 18px;
+        font-size: 14px;
+        line-height: 20px;
     }
 
     .text-section-title {
@@ -308,45 +308,54 @@
         line-height: 22px;
     }
 
+    .text-modal-title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
     .text-body-lg-medium,
     .text-body-lg-semibold {
-        font-size: 12px;
-        line-height: 18px;
+        font-size: 14px;
+        line-height: 20px;
     }
 
     .text-body-md-bold,
     .text-body-md-semibold,
     .text-body-md-medium {
-        font-size: 11px;
-        line-height: 16px;
+        font-size: 13px;
+        line-height: 18px;
     }
 
     .text-body-sm-bold,
     .text-body-sm-semibold,
     .text-body-sm-medium {
-        font-size: 10px;
-        line-height: 14px;
+        font-size: 12px;
+        line-height: 18px;
     }
 
     .text-body-xs-medium,
     .text-body-xs-semibold {
-        font-size: 9px;
-        line-height: 12px;
+        font-size: 11px;
+        line-height: 16px;
     }
 
     .text-button-md {
-        font-size: 12px;
+        font-size: 13px;
+        line-height: 20px;
     }
 
     .text-button-sm {
-        font-size: 11px;
+        font-size: 13px;
+        line-height: 18px;
     }
 
     .text-caption-md {
-        font-size: 10px;
+        font-size: 12px;
+        line-height: 16px;
     }
 
     .text-caption-sm {
-        font-size: 9px;
+        font-size: 11px;
+        line-height: 14px;
     }
 }

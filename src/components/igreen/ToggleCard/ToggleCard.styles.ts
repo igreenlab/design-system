@@ -7,7 +7,7 @@
 export const toggleCardStyles = {
     // ===== CONTAINER PRINCIPAL =====
     container: {
-        base: "flex flex-col bg-bg-muted border border-border rounded-lg p-3.5 transition-all duration-300 ease-in-out",
+        base: "flex flex-col bg-bg-muted border border-border rounded-lg p-3 md:p-3.5 transition-all duration-300 ease-in-out",
         checked: "",
         unchecked: "",
     },
@@ -22,7 +22,7 @@ export const toggleCardStyles = {
 
     // ===== ÍCONE =====
     icon: {
-        container: "flex items-center justify-center shrink-0 size-[42px] bg-bg-surface rounded-base border border-border shadows-boxshadow-xs",
+        container: "flex items-center justify-center shrink-0 size-9 md:size-[42px] bg-bg-surface rounded-base border border-border shadows-boxshadow-xs",
         inner: "size-6 flex items-center justify-center [&_svg]:size-full text-fg-strong",
     },
 
@@ -38,7 +38,7 @@ export const toggleCardStyles = {
         container: "flex items-center p-1 gap-1 bg-bg-background rounded-base border border-border shrink-0 w-full md:w-auto mt-0 md:mt-0",
 
         button: {
-            base: "flex items-center justify-center h-[34px] min-w-[54px] px-4 rounded-sm text-body-sm-semibold transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-ring-primary focus-visible:outline-none flex-1 md:flex-none w-full md:w-auto",
+            base: "flex items-center justify-center h-[30px] md:h-[34px] min-w-[48px] md:min-w-[54px] px-3 md:px-4 rounded-sm text-body-sm-semibold transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-ring-primary focus-visible:outline-none flex-1 md:flex-none w-full md:w-auto",
 
             // Estado Ativo (Selecionado)
             activeMatches: {
