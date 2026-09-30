@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 export interface ChoiceItemProps {
     title: string;
-    description: string;
+    description?: string;
     icon: ReactNode;
     active?: boolean;
     onClick?: () => void;
