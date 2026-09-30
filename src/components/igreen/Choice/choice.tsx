@@ -45,9 +45,11 @@ export const ChoiceItem: React.FC<ChoiceItemProps> = ({
                 <span className={choiceStyles.item.content.title}>
                     {title}
                 </span>
-                <span className={choiceStyles.item.content.description}>
-                    {description}
-                </span>
+                {description && (
+                    <span className={choiceStyles.item.content.description}>
+                        {description}
+                    </span>
+                )}
             </div>
 
             {/* Selected Indicator */}
